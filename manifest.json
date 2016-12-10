@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "SendX",
+  "description": "Mail Tracking",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["http://www.linkedin.com/*" , "https://www.linkedin.com/*"],
+	  "js": ["myscript.js"],
+	  "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "<all_urls>",
+	"storage",
+	"tabs",
+	"unlimitedStorage",
+	"bookmarks"
+  ],
+  "web_accessible_resources": [ "mystyles.css", "myscript.js", "*" ]
+
+}
